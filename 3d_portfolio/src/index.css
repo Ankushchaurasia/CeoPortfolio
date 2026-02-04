@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a14; /* Deep dark background */
+  --color-surface: #12122a; /* Slightly lighter for cards */
+  --color-surface-hover: #1a1a35;
+  --color-primary-start: #a855f7; /* Purple */
+  --color-primary-end: #ec4899; /* Pink */
+  --font-sans: 'Inter', sans-serif;
+
+  /* Custom gradient utilities */
+  --image-glow: radial-gradient(circle at center, rgba(168, 85, 247, 0.4) 0%, rgba(10, 10, 20, 0) 70%);
+}
+
+/* Global Styles */
+body {
+  background-color: var(--color-background);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Utility class for gradient text */
+.text-gradient {
+  background: linear-gradient(to right, var(--color-primary-start), var(--color-primary-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-to-r-theme {
+   background: linear-gradient(to right, var(--color-primary-start), var(--color-primary-end));
+}
+
+/* Custom scrollbar for dark mode vibe */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: #333350;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444460;
+}
+/* src/index.css - Add this to your existing file */
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
