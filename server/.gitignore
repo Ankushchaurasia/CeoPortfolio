@@ -24,12 +24,5 @@ dist/
 *.db
 
 
-# Testing
-coverage/
-
-
-# IDE / Editor
-.vscode/
-.idea/
 
 
