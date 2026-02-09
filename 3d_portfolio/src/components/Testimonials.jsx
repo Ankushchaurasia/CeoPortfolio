@@ -11,13 +11,13 @@ const staggerContainer = {
   visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
 };
 
-const SectionHeader = ({ title, subtitle, badge }) => (
-  <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
+    const SectionHeader = ({ title, subtitle, badge }) => (
+       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
     <div className="flex justify-center mb-4">
       <div className="bg-surface p-3 rounded-2xl bg-gradient-to-br from-primary-start/20 to-primary-end/20">{badge}</div>
     </div>
     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">{title}</h2>
-    <p className="text-gray-400 max-w-2xl mx-auto">{subtitle}</p>
+        <p className="text-gray-400 max-w-2xl mx-auto">{subtitle}</p>
   </motion.div>
 );
 

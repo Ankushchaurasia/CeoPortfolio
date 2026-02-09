@@ -10,7 +10,7 @@ const LoginPage = ({ initialMode = 'login', onLoginSuccess, onBack }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Update internal state if the prop changes
+
   useEffect(() => {
     setIsLogin(initialMode === 'login');
   }, [initialMode]);
@@ -21,10 +21,10 @@ const LoginPage = ({ initialMode = 'login', onLoginSuccess, onBack }) => {
     setError('');
 
     setTimeout(() => {
-      // Hardcoded Logic
+
       if (isLogin) {
         if (email === 'admin@ceo.com' && password === 'admin') {
-          onLoginSuccess(); // Go to Dashboard
+          onLoginSuccess(); 
         } else {
           setError('Invalid Credentials (Try: admin@ceo.com / admin)');
           setLoading(false);
@@ -38,12 +38,11 @@ const LoginPage = ({ initialMode = 'login', onLoginSuccess, onBack }) => {
 
   return (
     <div className="min-h-screen w-full bg-[#0a0a14] flex items-center justify-center p-4 relative overflow-hidden">
-      
-      {/* Background Ambience */}
+
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-purple-600/20 blur-[150px] rounded-full"></div>
       <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-pink-600/20 blur-[150px] rounded-full"></div>
 
-      {/* Back Button */}
+    
       <button 
         onClick={onBack}
         className="absolute top-8 left-8 flex items-center gap-2 text-gray-400 hover:text-white transition-colors z-20"
@@ -110,12 +109,12 @@ const LoginPage = ({ initialMode = 'login', onLoginSuccess, onBack }) => {
           </button>
         </form>
 
-        <div className="mt-8 text-center pt-6 border-t border-white/5">
+ <div className="mt-8 text-center pt-6 border-t border-white/5">
           <p className="text-gray-500 text-sm">
-            {isLogin ? "Don't have an account?" : "Already have an account?"}
+       {isLogin ? "Don't have an account?" : "Already have an account?"}
             <button 
               onClick={() => { setIsLogin(!isLogin); setError(''); }}
-              className="ml-2 text-purple-400 hover:text-purple-300 font-bold transition-colors"
+       className="ml-2 text-purple-400 hover:text-purple-300 font-bold transition-colors"
             >
               {isLogin ? 'Sign Up' : 'Log In'}
             </button>

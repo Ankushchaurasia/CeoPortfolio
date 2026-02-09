@@ -7,11 +7,12 @@ import {
   Trash2, CheckCircle, Target, Globe, BookOpen, Layers
 } from 'lucide-react';
 
-// --- MOCK DATA ---
+// testimonials data
+
 const initialMessages = [
-  { id: 1, name: "Sarah Johnson", email: "sarah@tech.com", subject: "Partnership Opportunity", date: "2 mins ago", status: "New" },
-  { id: 2, name: "Michael Chen", email: "m.chen@startup.io", subject: "Investment Inquiry", date: "2 hours ago", status: "Read" },
-  { id: 3, name: "Emma Davis", email: "emma@design.co", subject: "Speaking Request", date: "1 day ago", status: "Replied" },
+  { id: 1, name: "Ankush", email: "sarah@tech.com", subject: "Partnership Opportunity", date: "2 mins ago", status: "New" },
+  { id: 2, name: "Siddharth", email: "m.chen@startup.io", subject: "Investment Inquiry", date: "2 hours ago", status: "Read" },
+  { id: 3, name: "Anand", email: "emma@design.co", subject: "Speaking Request", date: "1 day ago", status: "Replied" },
 ];
 
 const statsData = [
@@ -21,7 +22,7 @@ const statsData = [
   { title: "Conversion Rate", value: "4.2%", change: "+0.8%", icon: <TrendingUp />, color: "text-pink-400", bg: "bg-pink-500/10" },
 ];
 
-// --- SIDEBAR ITEM COMPONENT ---
+// side bar items components
 const SidebarItem = ({ icon, label, active, onClick }) => (
   <button 
     onClick={onClick}
@@ -33,7 +34,7 @@ const SidebarItem = ({ icon, label, active, onClick }) => (
   </button>
 );
 
-const AdminDashboard = ({ onLogout }) => { // <--- Receives onLogout prop from App.jsx
+const AdminDashboard = ({ onLogout }) => { 
   const [activeTab, setActiveTab] = useState('overview');
   const [messages, setMessages] = useState(initialMessages);
 
@@ -44,7 +45,7 @@ const AdminDashboard = ({ onLogout }) => { // <--- Receives onLogout prop from A
   return (
     <div className="min-h-screen bg-[#0a0a14] flex text-white font-sans overflow-hidden">
       
-      {/* --- SIDEBAR --- */}
+      
       <aside className="w-64 bg-[#12122a] border-r border-white/5 flex flex-col hidden md:flex">
         <div className="p-6 border-b border-white/5">
            <h1 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Admin Panel</h1>
@@ -52,13 +53,13 @@ const AdminDashboard = ({ onLogout }) => { // <--- Receives onLogout prop from A
         </div>
 
         <nav className="flex-1 p-4 overflow-y-auto space-y-1">
-          {/* Main Controls */}
+          {/* main control section */}
           <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-2 mt-2">Dashboard</div>
           <SidebarItem icon={<LayoutDashboard />} label="Overview" active={activeTab === 'overview'} onClick={() => setActiveTab('overview')} />
           <SidebarItem icon={<MessageSquare />} label="Messages" active={activeTab === 'messages'} onClick={() => setActiveTab('messages')} />
           <SidebarItem icon={<Users />} label="Visitors" active={activeTab === 'visitors'} onClick={() => setActiveTab('visitors')} />
           
-          {/* Content Sections (Matches Website Navbar) */}
+        
           <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-2 mt-6">Edit Content</div>
           <SidebarItem icon={<Briefcase />} label="Hero Section" active={activeTab === 'hero'} onClick={() => setActiveTab('hero')} />
           <SidebarItem icon={<Users />} label="About Me" active={activeTab === 'about'} onClick={() => setActiveTab('about')} />
@@ -73,7 +74,7 @@ const AdminDashboard = ({ onLogout }) => { // <--- Receives onLogout prop from A
 
         <div className="p-4 border-t border-white/5">
           <button 
-            onClick={onLogout} // <--- Calls the Logout function
+            onClick={onLogout} 
             className="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:bg-red-500/10 rounded-xl transition-colors text-sm font-medium"
           >
             <LogOut size={18} /> Sign Out
@@ -81,12 +82,12 @@ const AdminDashboard = ({ onLogout }) => { // <--- Receives onLogout prop from A
         </div>
       </aside>
 
-      {/* --- MAIN CONTENT --- */}
+      
       <main className="flex-1 flex flex-col h-screen overflow-hidden relative">
         
-        {/* Top Header */}
+        {/* upper header */}
         <header className="h-16 border-b border-white/5 bg-[#0a0a14]/50 backdrop-blur-md flex items-center justify-between px-6 shrink-0 z-20">
-          <div className="md:hidden font-bold text-lg text-white">Admin Panel</div> {/* Mobile Title */}
+          <div className="md:hidden font-bold text-lg text-white">Admin Panel</div> 
           
           <div className="hidden md:flex items-center gap-4 w-96 bg-[#12122a] px-4 py-2 rounded-full border border-white/5 focus-within:border-purple-500/50 transition-colors">
             <Search size={18} className="text-gray-500" />
@@ -99,7 +100,7 @@ const AdminDashboard = ({ onLogout }) => { // <--- Receives onLogout prop from A
               <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-pink-500 rounded-full border border-[#0a0a14]"></span>
             </button>
             
-            {/* User Avatar (No extra buttons) */}
+             {/* for user icons */}
             <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 p-[2px]">
                <div className="w-full h-full rounded-full bg-[#12122a] flex items-center justify-center text-xs font-bold text-white">
                  A
@@ -108,11 +109,11 @@ const AdminDashboard = ({ onLogout }) => { // <--- Receives onLogout prop from A
           </div>
         </header>
 
-        {/* Scrollable Content Area */}
+        {/* For scrollbar styling and content area */}
         <div className="flex-1 overflow-y-auto p-6 md:p-8 bg-[#0a0a14]">
           <AnimatePresence mode="wait">
             
-            {/* --- TAB: OVERVIEW --- */}
+         {/* for tab */}
             {activeTab === 'overview' && (
               <motion.div 
                 key="overview"
@@ -125,8 +126,7 @@ const AdminDashboard = ({ onLogout }) => { // <--- Receives onLogout prop from A
                   <h2 className="text-2xl font-bold mb-1 text-white">Dashboard Overview</h2>
                   <p className="text-gray-400 text-sm">Welcome back, Admin. Here's your site performance.</p>
                 </div>
-
-                {/* Stats Grid */}
+ {/* status grid section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                   {statsData.map((stat, idx) => (
                     <div key={idx} className="bg-[#12122a] p-5 rounded-2xl border border-white/5 hover:border-white/10 transition-colors group">
@@ -143,8 +143,7 @@ const AdminDashboard = ({ onLogout }) => { // <--- Receives onLogout prop from A
                     </div>
                   ))}
                 </div>
-
-                {/* Recent Messages Section */}
+{/* new messages arrive */}
                 <div className="bg-[#12122a] rounded-3xl border border-white/5 overflow-hidden">
                   <div className="p-6 border-b border-white/5 flex justify-between items-center">
                     <h3 className="font-bold text-white">Recent Messages</h3>
@@ -241,8 +240,8 @@ const AdminDashboard = ({ onLogout }) => { // <--- Receives onLogout prop from A
               </motion.div>
             )}
 
-            {/* --- PLACEHOLDERS FOR OTHER TABS --- */}
-            {['hero', 'about', 'global', 'vision', 'services', 'testimonials', 'visitors', 'settings'].includes(activeTab) && (
+        
+    {['hero', 'about', 'global', 'vision', 'services', 'testimonials', 'visitors', 'settings'].includes(activeTab) && (
                  <motion.div 
                  key="placeholder"
                  initial={{ opacity: 0, y: 10 }}

@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Calendar, ArrowRight } from 'lucide-react';
-import { Link as ScrollLink } from 'react-scroll'; // Added Import
+import { Link as ScrollLink } from 'react-scroll'; 
 
 const fadeInUp = { hidden: { opacity: 0, y: 60 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } };
 
@@ -24,11 +24,10 @@ export default function Contact() {
         <SectionHeader title="Let's Connect" subtitle="Ready to start a conversation? Reach out and let's explore opportunities." badge={<Mail className="text-primary-start" />} />
         
         <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
-          {/* Left Side: Contact Info */}
+      
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="flex-1 space-y-6">
             <h3 className="text-2xl font-bold mb-8">Get in Touch</h3>
             
-            {/* Existing Contact List */}
             {[
               { icon: <Mail size={20} />, title: "Email", val: "ceo@example.com" },
               { icon: <Phone size={20} />, title: "Phone", val: "+1 (555) 123-4567" },
@@ -44,7 +43,6 @@ export default function Contact() {
               </div>
             ))}
 
-            {/* NEW ADDITION: Collaboration Card */}
             <div className="bg-surface p-6 rounded-3xl border border-white/5 inline-block w-full hover:border-primary-start/30 transition-colors">
               <h5 className="font-bold mb-4">Looking for Collaboration?</h5>
               <ScrollLink to="contact" smooth={true} offset={-70} className="bg-gradient-to-r-theme text-white font-bold py-3 px-6 rounded-full hover:opacity-90 transition-opacity cursor-pointer text-sm flex items-center gap-2 w-fit">
@@ -54,7 +52,7 @@ export default function Contact() {
 
           </motion.div>
 
-          {/* Right Side: Form */}
+ {/* right side forms */}
           <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="flex-1 bg-surface p-8 md:p-12 rounded-[3rem] border border-white/5 shadow-2xl relative">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-start/5 to-primary-end/5 rounded-[3rem] -z-10"></div>
             <h3 className="text-2xl font-bold mb-8">Send a Message</h3>

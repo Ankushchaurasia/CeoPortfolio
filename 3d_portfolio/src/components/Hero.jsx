@@ -15,7 +15,7 @@ const staggerContainer = {
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
+ <section id="home" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
       <div className="absolute top-20 left-[-10%] w-[40%] h-[40%] bg-primary-start/20 blur-[120px] rounded-full -z-10"></div>
       <div className="absolute bottom-10 right-[-10%] w-[30%] h-[30%] bg-primary-end/20 blur-[100px] rounded-full -z-10"></div>
 
