@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import { motion } from 'framer-motion';
 
-// --- IMPORT COMPONENTS ---
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -15,13 +14,12 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FloatingAi from './components/FloatingAi';
 
-// Admin & Auth Components
+
 import AdminDashboard from './components/AdminDashboard';
 import LoginPage from './components/LoginPage'; // Make sure you created this file from previous steps!
 
 function App() {
-  // State to manage which "Page" is currently visible
-  // Options: 'portfolio', 'login', 'dashboard'
+  
   const [currentView, setCurrentView] = useState('portfolio');
   
   // State to manage Auth Mode ('login' or 'signup') passed to the Login Page
@@ -36,13 +34,11 @@ function App() {
     scroll.scrollToTop({ duration: 0 }); // Reset scroll to top
   };
 
-  // 2. Called when user successfully logs in via LoginPage
   const handleLoginSuccess = () => {
     setCurrentView('dashboard');
     scroll.scrollToTop({ duration: 0 });
   };
 
-  // 3. Called when user clicks "Back" on LoginPage or "Logout" on Dashboard
   const handleBackToPortfolio = () => {
     setCurrentView('portfolio');
     scroll.scrollToTop({ duration: 0 });
@@ -67,13 +63,10 @@ function App() {
   // }
   // Inside App.jsx
 
-// ...
 
-// VIEW 1: ADMIN DASHBOARD
 if (currentView === 'dashboard') {
   return (
     <div className="relative">
-      {/* We pass the logout function directly to the dashboard component */}
       <AdminDashboard onLogout={handleBackToPortfolio} /> 
     </div>
   );
