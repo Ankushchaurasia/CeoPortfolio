@@ -30,7 +30,7 @@ const AnimatedCounter = ({ value, suffix = "" }) => {
 //  for flag items
 
 const FlagItem = ({ country, code }) => (
-  // Updated: Changed justify-center to justify-start to align tops
+  
   <div className="flex flex-col items-center justify-start mx-8 group">
     <div className="w-20 h-14 relative rounded-lg overflow-hidden shadow-lg border border-white/10 group-hover:border-primary-start transition-colors duration-300 shrink-0">
       <img
@@ -58,14 +58,15 @@ const GlobalImpact = () => {
 
 
   const countries = [
-    { name: "United States", code: "us" },
-    { name: "United Kingdom", code: "gb" },
-    { name: "Germany", code: "de" },
-    { name: "Singapore", code: "sg" },
-    { name: "United Arab Emirates", code: "ae" },
     { name: "India", code: "in" },
-    { name: "Japan", code: "jp" },
+    { name: "United Arab Emirates", code: "ae" },
     { name: "Australia", code: "au" },
+    { name: "Canada", code: "ca" },
+    { name: "Oman", code: "om" },
+    { name: "Europe", code: "eu" },
+    
+    { name: "Malesia", code: "my" },
+    { name: "Hong Kong", code: "hk" },
   ];
 
 

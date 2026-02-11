@@ -93,11 +93,10 @@ const Services = () => {
   return (
     <section 
       id="services" 
-     
-      className="h-screen w-full bg-background flex flex-col justify-center pt-20 pb-4 relative overflow-hidden"
+      className="min-h-screen w-full bg-background flex flex-col justify-center py-12 sm:py-20 relative overflow-hidden"
     >
   
-       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-primary-start/5 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-1/2 sm:w-1/3 h-1/3 bg-primary-start/5 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="container mx-auto px-4 h-full flex flex-col">
         
@@ -121,7 +120,7 @@ const Services = () => {
           initial="hidden" 
           whileInView="visible" 
           viewport={{ once: true }} 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 grow min-h-0"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 grow min-h-0"
         >
           {servicesList.map((service, index) => (
             <motion.div 
@@ -134,18 +133,18 @@ const Services = () => {
                 ${service.colorClass} ${service.bgTint}
               `}
             >
-              <div>
-                <div className={`p-3 rounded-xl bg-surface/50 w-fit mb-3 ${service.iconColor} transition-colors`}>
-                  {React.cloneElement(service.icon, { size: 24 })}
+                <div>
+                  <div className={`p-2 sm:p-3 rounded-xl bg-surface/50 w-fit mb-3 ${service.iconColor} transition-colors`}>
+                    {React.cloneElement(service.icon, { size: 22 })}
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold mb-2 text-white">{service.title}</h3>
+                  <p className="text-gray-400 text-sm sm:text-xs leading-relaxed mb-3">{service.desc}</p>
                 </div>
-                <h3 className="text-lg font-bold mb-2 text-white">{service.title}</h3>
-                <p className="text-gray-400 text-xs leading-relaxed mb-3">{service.desc}</p>
-              </div>
               
               <ul className="space-y-1">
                 {service.points.map((point, idx) => (
-                  <li key={idx} className="flex items-center text-[10px] text-gray-500 uppercase tracking-wide font-medium">
-                    <div className={`w-1.5 h-1.5 rounded-full mr-2 ${service.iconColor.replace('text-', 'bg-')}`}></div>
+                  <li key={idx} className="flex items-center text-[11px] sm:text-[10px] text-gray-500 uppercase tracking-wide font-medium">
+                    <div className={`w-2 h-2 rounded-full mr-2 ${service.iconColor.replace('text-', 'bg-')}`}></div>
                     {point}
                   </li>
                 ))}
@@ -161,7 +160,7 @@ const Services = () => {
           transition={{ delay: 0.5 }} 
           className="mt-6 shrink-0"
         >
-           <div className="rounded-2xl bg-gradient-to-r from-surface to-surface-hover border border-white/5 p-4 flex flex-col md:flex-row items-center justify-between gap-4">
+           <div className="rounded-2xl bg-gradient-to-r from-surface to-surface-hover border border-white/5 p-4 flex flex-col md:flex-row items-center justify-between gap-4 hover:border-primary-start/30 transition-colors">
               <div className="text-center md:text-left">
                   <h3 className="text-lg font-bold text-white">Ready to Scale?</h3>
                   <p className="text-gray-400 text-xs">Let's discuss your strategic goals.</p>

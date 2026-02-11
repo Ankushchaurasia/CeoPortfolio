@@ -17,6 +17,7 @@ import FloatingAi from './components/FloatingAi';
 import AdminDashboard from './components/AdminDashboard';
 import LoginPage from './components/LoginPage'; 
 import { sign } from 'three/tsl';
+// import Background3D from './components/Background3D';
 
 function App() {
   // State to manage which "Page" is currently visible
@@ -79,6 +80,7 @@ if (currentView === 'dashboard') {
         <Services />
         <Testimonials />
         <Contact />
+        {/* <Background3D /> */}
       </main>
 
       <Footer />
@@ -89,4 +91,3 @@ if (currentView === 'dashboard') {
 }
 
 export default App;
-

@@ -54,7 +54,7 @@ const Navbar = ({ onNavigateToAuth }) => {
             </ScrollLink>
           ))}
              
-             {/* Desktop User Profile Dropdown */}
+            {/* for dropdown view */}
              <div className="relative">
                <button 
                  onClick={() => setProfileOpen(!profileOpen)}

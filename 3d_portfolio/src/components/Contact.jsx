@@ -18,7 +18,7 @@ const SectionHeader = ({ title, subtitle, badge }) => (
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-10 relative overflow-hidden">
+    <section id="contact" className="py-10 relative scroll-mt-20">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[50%] bg-primary-end/10 blur-[150px] rounded-full -z-10"></div>
       <div className="container mx-auto px-6">
         <SectionHeader title="Let's Connect" subtitle="Ready to start a conversation? Reach out and let's explore opportunities." badge={<Mail className="text-primary-start" />} />
@@ -30,8 +30,8 @@ export default function Contact() {
             
             {[
               { icon: <Mail size={20} />, title: "Email", val: "ceo@example.com" },
-              { icon: <Phone size={20} />, title: "Phone", val: "+1 (555) 123-4567" },
-              { icon: <MapPin size={20} />, title: "Location", val: "New York, USA" },
+              { icon: <Phone size={20} />, title: "Phone", val: "+91 81789 85557 " },
+              { icon: <MapPin size={20} />, title: "Location", val: "Gudgaon, INDIA" },
               { icon: <Calendar size={20} />, title: "Schedule", val: "Book a Meeting" }
             ].map((item, idx) => (
               <div key={idx} className="flex items-center p-6 bg-surface rounded-3xl border border-white/5 hover:border-primary-start/30 transition-colors">
@@ -52,7 +52,7 @@ export default function Contact() {
 
           </motion.div>
 
- {/* right side forms */}
+{/* right forms */}
           <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="flex-1 bg-surface p-8 md:p-12 rounded-[3rem] border border-white/5 shadow-2xl relative">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-start/5 to-primary-end/5 rounded-[3rem] -z-10"></div>
             <h3 className="text-2xl font-bold mb-8">Send a Message</h3>
@@ -72,7 +72,7 @@ export default function Contact() {
               <div>
                 <label className="block text-sm font-medium text-gray-400 mb-2">Message *</label>
                 <textarea rows="4" placeholder="Tell me about your project..." className="w-full bg-background border border-white/10 px-4 py-4 rounded-xl focus:outline-none focus:border-primary-start transition-colors resize-none"></textarea>
-              </div>
+          </div>
               <button type="submit" className="w-full bg-gradient-to-r-theme text-white font-bold py-4 px-8 rounded-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-primary-start/25">
                 Send Message <ArrowRight />
               </button>
