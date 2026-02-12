@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-            <span className="text-2xl font-bold text-gradient mb-6 block">CEO Portfolio</span>
+            <span className="text-2xl font-bold text-gradient mb-6 block">Thakur Abhisekh Singh</span>
             <p className="text-gray-400 max-w-sm leading-relaxed mb-8">
               Leading innovation and driving excellence in business transformation. Empowering organizations to achieve sustainable growth.
             </p>
@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
 
         <div className="py-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">© 2026 CEO Portfolio. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">© 2026 Thakur Abhisekh Singh. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="https://www.linkedin.com/in/abhisheklifecoach " className="bg-surface p-3 rounded-full text-gray-400 hover:text-white hover:bg-primary-start transition-all"><Linkedin size={18} /></a>
             <a href="#" className="bg-surface p-3 rounded-full text-gray-400 hover:text-white hover:bg-primary-start transition-all"><Twitter size={18} /></a>

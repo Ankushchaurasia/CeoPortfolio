@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
+import Ankush from '../assets/ankush.jpeg';
+import sidd from '../assets/sidd.jpeg';
+import ritik from '../assets/ritik.jpeg';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
@@ -29,9 +32,9 @@ const Card = ({ children, className = "" }) => (
 
 export default function Testimonials() {
   const testimonials = [
-    { quote: "Working with this visionary leader transformed our entire organization. The strategic insights delivered results beyond expectations.", name: "Sarah Johnson", role: "CEO, Tech Innovations Inc.", image: "https://i.pravatar.cc/100?img=5" },
-    { quote: "An exceptional mentor and advisor. The guidance received was instrumental in scaling our startup from seed to Series B in record time.", name: "Michael Chen", role: "Founder, StartUp Ventures", image: "https://i.pravatar.cc/100?img=11" },
-    { quote: "A true thought leader. The strategic frameworks and insights have become core to how we approach complex challenges.", name: "Emily Rodriguez", role: "MD, Global Finance", image: "https://i.pravatar.cc/100?img=9" }
+    { quote: "Working with this visionary leader transformed our entire organization. The strategic insights delivered results beyond expectations.", name: "Ankush Chaurasia", role: "CEO, Tech Innovations Inc.", image: Ankush},
+    { quote: "An exceptional mentor and advisor. The guidance received was instrumental in scaling our startup from seed to Series B in record time.", name: "Siddharth Pathak", role: "Founder, StartUp Ventures", image: sidd },
+    { quote: "A true thought leader. The strategic frameworks and insights have become core to how we approach complex challenges.", name: "Ritik Kumar", role: "MD, Global Finance", image: ritik }
   ];
 
   return (
