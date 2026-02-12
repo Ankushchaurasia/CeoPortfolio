@@ -16,6 +16,18 @@ const staggerContainer = {
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
+      <motion.div
+  className="absolute top-[20%] left-[8%] w-[320px] h-[320px] bg-primary-start/25 rounded-full blur-[140px]"
+  animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
+  transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+/>
+
+<motion.div
+  className="absolute bottom-[15%] right-[10%] w-[360px] h-[360px] bg-primary-end/25 rounded-full blur-[160px]"
+  animate={{ y: [0, 35, 0], x: [0, -25, 0] }}
+  transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+/>
+
       <div className="absolute top-20 left-[-10%] w-[40%] h-[40%] bg-primary-start/20 blur-[120px] rounded-full -z-10"></div>
       <div className="absolute bottom-10 right-[-10%] w-[30%] h-[30%] bg-primary-end/20 blur-[100px] rounded-full -z-10"></div>
 
@@ -25,8 +37,11 @@ const Hero = () => {
             <span className="text-gradient">Driving Innovation & Growth</span>
           </motion.div>
           <motion.h1 variants={fadeInUp} className="text-5xl lg:text-7xl font-extrabold mb-6 leading-tight">
-            We <span className="text-gradient">Convert Concept</span> Into Technology
-          </motion.h1>
+            We <span className="bg-gradient-to-r from-primary-start via-primary-end to-primary-start bg-[length:200%_200%] animate-gradient text-transparent bg-clip-text">
+              Convert Concept  </span>
+            Into Technology   </motion.h1>
+                                  
+    
           <motion.p variants={fadeInUp} className="text-xl text-gray-400 mb-10 max-w-xl mx-auto lg:mx-0">
             Visionary leadership focused on digital transformation, sustainable scaling, and creating lasting global impact.
           </motion.p>
@@ -41,12 +56,24 @@ const Hero = () => {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="flex-1 relative">
+          
           <div className="relative z-10 w-full max-w-md mx-auto lg:max-w-full lg:ml-auto aspect-square rounded-[3rem] overflow-hidden border-4 border-surface/50">
             <img src={ceoImage || "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop"} alt="CEO Profile" className="w-full h-full object-cover" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-tr from-primary-start to-primary-end opacity-30 blur-3xl -z-10 transform translate-x-4 translate-y-4 rounded-[3rem]"></div>
         </motion.div>
       </div>
+
+      {/* <motion.div
+       animate={{ y: [0, 10, 0] }}
+      transition={{ duration: 2, repeat: Infinity }}
+      className="absolute bottom-6 left-1/2 -translate-x-1/2 text-gray-400 text-sm"
+      >
+      <button>Scroll ↓</button>
+     </motion.div> */}
+
+      
+      
     </section>
   );
 };

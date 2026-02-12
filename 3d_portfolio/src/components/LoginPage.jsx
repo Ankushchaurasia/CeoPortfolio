@@ -21,10 +21,10 @@ const LoginPage = ({ initialMode = 'login', onLoginSuccess, onBack }) => {
     setError('');
 
     setTimeout(() => {
-      // Hardcoded Logic
+     
       if (isLogin) {
         if (email === 'admin@ceo.com' && password === 'admin') {
-          onLoginSuccess(); // Go to Dashboard
+          onLoginSuccess(); 
         } else {
           setError('Invalid Credentials (Try: admin@ceo.com / admin)');
           setLoading(false);
@@ -39,11 +39,10 @@ const LoginPage = ({ initialMode = 'login', onLoginSuccess, onBack }) => {
   return (
     <div className="min-h-screen w-full bg-[#0a0a14] flex items-center justify-center p-4 relative overflow-hidden">
       
-      {/* Background Ambience */}
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-purple-600/20 blur-[150px] rounded-full"></div>
       <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-pink-600/20 blur-[150px] rounded-full"></div>
 
-      {/* Back Button */}
+      
       <button 
         onClick={onBack}
         className="absolute top-8 left-8 flex items-center gap-2 text-gray-400 hover:text-white transition-colors z-20"
