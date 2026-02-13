@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Lightbulb, Globe, Award, Users, CheckCircle } from 'lucide-react';
 
-// --- Animation Variants (copied locally for this component) ---
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -11,21 +10,20 @@ const fadeInUp = {
 const staggerContainer = {
   hidden: { opacity: 1 },
   visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
+  opacity: 1,
+   transition: {
+     staggerChildren: 0.2
     }
   }
 };
 
-// --- Small local helpers (copied from App.jsx) ---
-export const SectionHeader = ({ title, subtitle, badge }) => (
-  <motion.div
-    variants={fadeInUp}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true }}
-    className="text-center mb-16"
+      export const SectionHeader = ({ title, subtitle, badge }) => (
+       <motion.div
+        variants={fadeInUp}
+         initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+       className="text-center mb-16"
   >
     <div className="flex justify-center mb-4">
         <div className="bg-surface p-3 rounded-2xl bg-gradient-to-br from-primary-start/20 to-primary-end/20">
@@ -34,7 +32,7 @@ export const SectionHeader = ({ title, subtitle, badge }) => (
     </div>
     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">{title}</h2>
     <p className="text-gray-400 max-w-2xl mx-auto">{subtitle}</p>
-  </motion.div>
+        </motion.div>
 );
 
 export const Card = ({ children, className = "" }) => (

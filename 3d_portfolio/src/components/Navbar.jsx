@@ -28,7 +28,7 @@ const Navbar = ({ onNavigateToAuth }) => {
   const handleAuthClick = (mode) => {
     setProfileOpen(false);
     setIsOpen(false);
-    onNavigateToAuth(mode); // 'login' or 'signup'
+    onNavigateToAuth(mode); 
   };
 
   return (
@@ -38,7 +38,6 @@ const Navbar = ({ onNavigateToAuth }) => {
           Abhishek Singh
         </span>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <ScrollLink
@@ -55,7 +54,7 @@ const Navbar = ({ onNavigateToAuth }) => {
             </ScrollLink>
           ))}
              
-             {/* USER ICON with Dropdown */}
+            {/* for dropdown view */}
              <div className="relative">
                <button 
                  onClick={() => setProfileOpen(!profileOpen)}
@@ -90,9 +89,7 @@ const Navbar = ({ onNavigateToAuth }) => {
              </div>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center gap-4">
-           {/* Mobile User Icon */}
            <button onClick={() => setProfileOpen(!profileOpen)} className="text-gray-300">
              <User size={24} />
            </button>
@@ -102,14 +99,13 @@ const Navbar = ({ onNavigateToAuth }) => {
         </div>
       </div>
 
-       {/* Mobile User Dropdown (Separate from Main Menu) */}
-       <AnimatePresence>
+  <AnimatePresence>
         {profileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#12122a] border-b border-white/5 absolute w-full z-40"
+           className="md:hidden bg-[#12122a] border-b border-white/5 absolute w-full z-40"
           >
             <div className="p-4 space-y-2">
                 <button onClick={() => handleAuthClick('login')} className="w-full flex items-center gap-3 px-4 py-3 bg-white/5 rounded-xl text-white">

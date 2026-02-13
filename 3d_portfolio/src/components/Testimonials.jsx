@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
+import Ankush from '../assets/ankush.jpeg';
+import sidd from '../assets/sidd.jpeg';
+import ritik from '../assets/ritik.jpeg';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
@@ -11,13 +14,13 @@ const staggerContainer = {
   visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
 };
 
-const SectionHeader = ({ title, subtitle, badge }) => (
-  <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
+    const SectionHeader = ({ title, subtitle, badge }) => (
+       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
     <div className="flex justify-center mb-4">
       <div className="bg-surface p-3 rounded-2xl bg-gradient-to-br from-primary-start/20 to-primary-end/20">{badge}</div>
     </div>
     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">{title}</h2>
-    <p className="text-gray-400 max-w-2xl mx-auto">{subtitle}</p>
+        <p className="text-gray-400 max-w-2xl mx-auto">{subtitle}</p>
   </motion.div>
 );
 
@@ -29,9 +32,9 @@ const Card = ({ children, className = "" }) => (
 
 export default function Testimonials() {
   const testimonials = [
-    { quote: "Working with this visionary leader transformed our entire organization. The strategic insights delivered results beyond expectations.", name: "Sarah Johnson", role: "CEO, Tech Innovations Inc.", image: "https://i.pravatar.cc/100?img=5" },
-    { quote: "An exceptional mentor and advisor. The guidance received was instrumental in scaling our startup from seed to Series B in record time.", name: "Michael Chen", role: "Founder, StartUp Ventures", image: "https://i.pravatar.cc/100?img=11" },
-    { quote: "A true thought leader. The strategic frameworks and insights have become core to how we approach complex challenges.", name: "Emily Rodriguez", role: "MD, Global Finance", image: "https://i.pravatar.cc/100?img=9" }
+    { quote: "Working with this visionary leader transformed our entire organization. The strategic insights delivered results beyond expectations.", name: "Ankush Chaurasia", role: "CEO, Tech Innovations Inc.", image: Ankush},
+    { quote: "An exceptional mentor and advisor. The guidance received was instrumental in scaling our startup from seed to Series B in record time.", name: "Siddharth Pathak", role: "Founder, StartUp Ventures", image: sidd },
+    { quote: "A true thought leader. The strategic frameworks and insights have become core to how we approach complex challenges.", name: "Ritik Kumar", role: "MD, Global Finance", image: ritik }
   ];
 
   return (

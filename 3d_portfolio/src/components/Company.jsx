@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
 import { Globe, Building2, TrendingUp, Users } from 'lucide-react';
 
-// --- Helper Component: Animated Counter ---
+// for animation helping  components
 const AnimatedCounter = ({ value, suffix = "" }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
@@ -16,7 +16,6 @@ const AnimatedCounter = ({ value, suffix = "" }) => {
     }
   }, [inView, value, motionValue]);
 
-  // We use a ref to update the text directly for performance
   useEffect(() => {
     return springValue.on("change", (latest) => {
       if (ref.current) {
@@ -28,9 +27,10 @@ const AnimatedCounter = ({ value, suffix = "" }) => {
   return <span ref={ref} className="text-4xl md:text-5xl font-extrabold text-white" />;
 };
 
-// --- Helper Component: Flag Item ---
+//  for flag items
+
 const FlagItem = ({ country, code }) => (
-  // Updated: Changed justify-center to justify-start to align tops
+  
   <div className="flex flex-col items-center justify-start mx-8 group">
     <div className="w-20 h-14 relative rounded-lg overflow-hidden shadow-lg border border-white/10 group-hover:border-primary-start transition-colors duration-300 shrink-0">
       <img
@@ -40,16 +40,15 @@ const FlagItem = ({ country, code }) => (
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
     </div>
-    {/* Updated: Added whitespace-nowrap to prevent text wrapping/jumping */}
+  
     <span className="mt-3 text-sm font-medium text-gray-400 group-hover:text-white transition-colors whitespace-nowrap">
       {country}
     </span>
   </div>
 );
 
-// --- Main Section Component ---
 const GlobalImpact = () => {
-  // 1. Stats Data
+  // first items data
   const stats = [
     { id: 1, label: "Companies Founded", value: 7, icon: <Building2 />, suffix: "" },
     { id: 2, label: "Global Ventures", value: 12, icon: <Globe />, suffix: "+" },
@@ -57,26 +56,25 @@ const GlobalImpact = () => {
     { id: 4, label: "Teams Led", value: 2500, icon: <Users />, suffix: "+" },
   ];
 
-  // 2. Flags Data (8 Countries)
+
   const countries = [
-    { name: "United States", code: "us" },
-    { name: "United Kingdom", code: "gb" },
-    { name: "Germany", code: "de" },
-    { name: "Singapore", code: "sg" },
-    { name: "United Arab Emirates", code: "ae" },
     { name: "India", code: "in" },
-    { name: "Japan", code: "jp" },
+    { name: "United Arab Emirates", code: "ae" },
     { name: "Australia", code: "au" },
+    { name: "Canada", code: "ca" },
+    { name: "Oman", code: "om" },
+    { name: "Europe", code: "eu" },
+    
+    { name: "Malesia", code: "my" },
+    { name: "Hong Kong", code: "hk" },
   ];
 
-  // Duplicate list for seamless infinite scroll
+
   const marqueeFlags = [...countries, ...countries];
 
   return (
-    // 👇 IMPORTANT: id="global-impact" allows the Navbar link to find this section
     <section id="global-impact" className="py-24 bg-background relative overflow-hidden">
-      
-      {/* Background Decorative Glow */}
+
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-primary-start/5 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="container mx-auto px-6 mb-20">
@@ -94,7 +92,6 @@ const GlobalImpact = () => {
           </h2>
         </motion.div>
 
-        {/* --- STATS GRID --- */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
           {stats.map((stat) => (
             <motion.div
@@ -123,13 +120,11 @@ const GlobalImpact = () => {
         </div>
       </div>
 
-      {/* --- INFINITE FLAG MARQUEE --- */}
       <div className="w-full border-t border-white/5 bg-surface/30 backdrop-blur-sm py-10 relative">
         <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-background to-transparent z-10"></div>
         <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-background to-transparent z-10"></div>
 
-        <div className="flex overflow-hidden">
-          {/* Updated: Changed items-center to items-start to fix alignment issues */}
+   <div className="flex overflow-hidden">
           <div className="animate-marquee flex items-start pt-2">
             {marqueeFlags.map((flag, index) => (
               <FlagItem key={`${flag.code}-${index}`} country={flag.name} code={flag.code} />

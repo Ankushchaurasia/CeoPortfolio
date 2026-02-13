@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Rocket, Lightbulb, Users, Award } from 'lucide-react';
 
-// --- Animations ---
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -24,7 +23,6 @@ const itemVariants = {
   }
 };
 
-// --- Reusable Card Component (Preserving Styles) ---
 const Card = ({ children, className = "" }) => (
   <motion.div 
     variants={itemVariants} 
@@ -38,10 +36,9 @@ const Vision = () => {
   return (
     <section 
       id="vision" 
-      // min-h-screen forces full viewport height. flex + justify-center vertically centers content.
+
       className="min-h-screen py-10 bg-surface/30 flex flex-col justify-center relative overflow-hidden"
     >
-       {/* Background Decoration */}
        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary-start/5 blur-[120px] rounded-full pointer-events-none"></div>
 
        <div className="container mx-auto px-6">
@@ -50,10 +47,10 @@ const Vision = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }} // Triggers when 20% of section is visible
+            viewport={{ once: true, amount: 0.2 }} // Trigger when 20% of the section is visible
             className="flex flex-col gap-8"
          >
-            {/* 1. Header Section */}
+   {/* main heading */}
             <motion.div variants={itemVariants} className="text-center">
                 <div className="inline-flex justify-center mb-3 bg-surface p-3 rounded-2xl bg-gradient-to-br from-primary-start/20 to-primary-end/20 text-primary-start">
                     <Target size={24}/>
@@ -61,10 +58,8 @@ const Vision = () => {
                 <h2 className="text-3xl md:text-5xl font-bold mb-2 text-gradient">Vision & Mission</h2>
                 <p className="text-gray-400 max-w-2xl mx-auto">Building tomorrow's solutions with today's innovations.</p>
             </motion.div>
-
-            {/* 2. Top Row: Vision & Mission */}
+{/* for vision and mission cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Vision Card */}
                 <Card className="bg-gradient-to-br from-surface to-surface-hover">
                     <div className="flex items-center gap-4 mb-4">
                         <div className="p-3 rounded-xl bg-primary-start/20 text-primary-start"><Target size={28}/></div>
@@ -75,7 +70,7 @@ const Vision = () => {
                     </p>
                 </Card>
 
-                {/* Mission Card */}
+    {/* for mission card */}
                 <Card className="bg-gradient-to-br from-surface to-surface-hover">
                     <div className="flex items-center gap-4 mb-4">
                         <div className="p-3 rounded-xl bg-primary-end/20 text-primary-end"><Rocket size={28}/></div>
@@ -87,7 +82,6 @@ const Vision = () => {
                 </Card>
             </div>
 
-            {/* 3. Bottom Row: Guiding Principles (Heading + 3 Cards) */}
             <div>
                  <motion.h3 variants={itemVariants} className="text-xl font-bold text-center mb-6 text-white">Guiding Principles</motion.h3>
                  

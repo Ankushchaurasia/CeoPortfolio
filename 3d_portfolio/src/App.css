@@ -1,0 +1,30 @@
+/* --- 1. Background Settings --- */
+/* This makes the animation stay fixed on the screen while you scroll */
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Puts it BEHIND everything */
+  background: #0a192f; /* Deep Navy Base Color */
+}
+
+/* --- 2. Content Settings --- */
+.content-layer {
+  position: relative;
+  z-index: 1; /* Puts text IN FRONT of animation */
+}
+
+/* --- 3. TRANSPARENCY FIX (Crucial!) --- */
+/* We remove solid backgrounds so the animation shows through */
+.home-container {
+  background: transparent !important; 
+}
+
+.vision-container, 
+.blog-container {
+  /* We use rgba to give a slight tint, but keep it see-through */
+  background: rgba(10, 25, 47, 0.85) !important; 
+  backdrop-filter: blur(5px); /* Optional: Adds a cool glass effect */
+}
