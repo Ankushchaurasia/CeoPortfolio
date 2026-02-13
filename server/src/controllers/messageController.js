@@ -1,6 +1,5 @@
 const Message = require("../models/Message");
 
-// Get all messages
 exports.getMessages = async (req, res) => {
   try {
     const messages = await Message.find().sort({ createdAt: -1 });
@@ -10,7 +9,7 @@ exports.getMessages = async (req, res) => {
   }
 };
 
-// Delete message
+
 exports.deleteMessage = async (req, res) => {
   try {
     await Message.findByIdAndDelete(req.params.id);
@@ -20,7 +19,7 @@ exports.deleteMessage = async (req, res) => {
   }
 };
 
-// Mark as read
+
 exports.markAsRead = async (req, res) => {
   try {
     await Message.findByIdAndUpdate(req.params.id, { isRead: true });

@@ -1,18 +1,41 @@
 require("dotenv").config();
-const express = require('express');
 
-const app=express();
+const express = require("express");
+const cors = require("cors");
+
 const connectDB = require("./src/config/db");
 
-// const connectDB=require("./src/config/db")
-
+// connect database
 connectDB();
 
-const Port=process.env.PORT||5000;
-app.get("/",(req,res)=>{
-    res.send("hiii i am also there")
-})
+const app = express();
 
-app.listen(Port,()=>{
-    console.log(`app is listening on port ${Port}`)
-})
+
+
+app.use(cors({
+  origin: "http://localhost:5173",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
+
+
+app.use(express.json());
+
+
+
+app.use("/api", require("./src/routes/contactRoutes"));
+
+
+
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
+
+
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
