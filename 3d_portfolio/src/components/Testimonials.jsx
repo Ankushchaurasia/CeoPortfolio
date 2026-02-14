@@ -35,6 +35,7 @@ export default function Testimonials() {
     { quote: "Working with this visionary leader transformed our entire organization. The strategic insights delivered results beyond expectations.", name: "Ankush Chaurasia", role: "CEO, Tech Innovations Inc.", image: Ankush},
     { quote: "An exceptional mentor and advisor. The guidance received was instrumental in scaling our startup from seed to Series B in record time.", name: "Siddharth Pathak", role: "Founder, StartUp Ventures", image: sidd },
     { quote: "A true thought leader. The strategic frameworks and insights have become core to how we approach complex challenges.", name: "Ritik Kumar", role: "MD, Global Finance", image: ritik }
+    
   ];
 
   return (

@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
 
         <div className="py-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">© 2026 Thakur Abhisekh Singh. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">© 2026 Thakur Abhishek Singh. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="https://www.linkedin.com/in/abhisheklifecoach " className="bg-surface p-3 rounded-full text-gray-400 hover:text-white hover:bg-primary-start transition-all"><Linkedin size={18} /></a>
             <a href="#" className="bg-surface p-3 rounded-full text-gray-400 hover:text-white hover:bg-primary-start transition-all"><Twitter size={18} /></a>
