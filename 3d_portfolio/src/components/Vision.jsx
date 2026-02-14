@@ -37,7 +37,7 @@ const Vision = () => {
     <section 
       id="vision" 
 
-      className="min-h-screen py-10 bg-surface/30 flex flex-col justify-center relative overflow-hidden"
+className="min-h-90vh py-10 bg-surface/30 flex flex-col justify-center relative overflow-hidden"
     >
        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary-start/5 blur-[120px] rounded-full pointer-events-none"></div>
 

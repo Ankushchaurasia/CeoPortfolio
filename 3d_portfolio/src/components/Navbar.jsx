@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -38,7 +37,7 @@ const Navbar = ({ onNavigateToAuth }) => {
           Abhishek Singh
         </span>
 
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
             <ScrollLink
               key={link.name}
@@ -53,43 +52,42 @@ const Navbar = ({ onNavigateToAuth }) => {
               {link.name}
             </ScrollLink>
           ))}
-             
-            {/* for dropdown view */}
-             <div className="relative">
-               <button 
-                 onClick={() => setProfileOpen(!profileOpen)}
-                 className={`p-2 rounded-full transition-all border ${profileOpen ? 'bg-purple-500 text-white border-purple-500' : 'bg-white/5 text-gray-400 border-transparent hover:text-white hover:bg-white/10'}`}
-               >
-                 <User size={20} />
-               </button>
 
-               <AnimatePresence>
-                 {profileOpen && (
-                   <motion.div
-                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                     className="absolute right-0 mt-3 w-48 bg-[#12122a] rounded-xl border border-white/10 shadow-xl overflow-hidden"
-                   >
-                     <div className="p-1.5 space-y-1">
-                       <button onClick={() => handleAuthClick('login')} className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors text-left group">
-                         <LogIn size={16} className="text-purple-400 group-hover:text-purple-300"/> Admin Login
-                       </button>
-                       <button onClick={() => handleAuthClick('signup')} className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors text-left group">
-                         <UserPlus size={16} className="text-pink-400 group-hover:text-pink-300"/> Sign Up
-                       </button>
-                       <div className="h-px bg-white/10 my-1"></div>
-                       <button onClick={() => alert("Settings Panel Coming Soon!")} className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors text-left">
-                         <Settings size={16} /> Settings
-                       </button>
-                     </div>
-                   </motion.div>
-                 )}
-               </AnimatePresence>
-             </div>
+            <div className="relative">
+              <button 
+                onClick={() => setProfileOpen(!profileOpen)}
+                className={`p-2 rounded-full transition-all border ${profileOpen ? 'bg-purple-500 text-white border-purple-500' : 'bg-white/5 text-gray-400 border-transparent hover:text-white hover:bg-white/10'}`}
+              >
+                <User size={20} />
+              </button>
+
+              <AnimatePresence>
+                {profileOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    className="absolute right-0 mt-3 w-48 bg-[#12122a] rounded-xl border border-white/10 shadow-xl overflow-hidden"
+                  >
+                    <div className="p-1.5 space-y-1">
+                      <button onClick={() => handleAuthClick('login')} className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors text-left group">
+                        <LogIn size={16} className="text-purple-400 group-hover:text-purple-300"/> Admin Login
+                      </button>
+                      <button onClick={() => handleAuthClick('signup')} className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors text-left group">
+                        <UserPlus size={16} className="text-pink-400 group-hover:text-pink-300"/> Sign Up
+                      </button>
+                      <div className="h-px bg-white/10 my-1"></div>
+                      <button onClick={() => alert("Settings Panel Coming Soon!")} className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors text-left">
+                        <Settings size={16} /> Settings
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
         </div>
 
-        <div className="md:hidden flex items-center gap-4">
+        <div className="lg:hidden flex items-center gap-4">
            <button onClick={() => setProfileOpen(!profileOpen)} className="text-gray-300">
              <User size={24} />
            </button>
@@ -100,12 +98,36 @@ const Navbar = ({ onNavigateToAuth }) => {
       </div>
 
   <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-[#12122a] border-b border-white/5 absolute w-full z-40"
+          >
+            <div className="p-4 space-y-2">
+              {navLinks.map(link => (
+                <ScrollLink
+                  key={link.name}
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg cursor-pointer"
+                >
+                  {link.name}
+                </ScrollLink>
+              ))}
+            </div>
+          </motion.div>
+        )}
         {profileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-           className="md:hidden bg-[#12122a] border-b border-white/5 absolute w-full z-40"
+           className="lg:hidden bg-[#12122a] border-b border-white/5 absolute w-full z-40"
           >
             <div className="p-4 space-y-2">
                 <button onClick={() => handleAuthClick('login')} className="w-full flex items-center gap-3 px-4 py-3 bg-white/5 rounded-xl text-white">

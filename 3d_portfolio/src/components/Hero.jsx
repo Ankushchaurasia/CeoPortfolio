@@ -41,8 +41,8 @@ const Hero = () => {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="flex-1 relative">
-          <div className="relative z-10 w-full max-w-md mx-auto lg:max-w-full lg:ml-auto aspect-square rounded-[3rem] overflow-hidden border-4 border-surface/50">
-            <img src={ceoImage || "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop"} alt="CEO Profile" className="w-full h-full object-cover" />
+          <div className="relative z-10 w-full max-w-md sm:max-w-lg lg:max-w-xl mx-auto lg:mx-0 aspect-square rounded-[3rem] overflow-hidden border-4 border-surface/50 max-h-[760px]">
+            <img src={ceoImage || "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop"} alt="CEO Profile" className="w-full h-full object-cover object-center" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-tr from-primary-start to-primary-end opacity-30 blur-3xl -z-10 transform translate-x-4 translate-y-4 rounded-[3rem]"></div>
         </motion.div>
