@@ -90,7 +90,7 @@ const Services = () => {
       <div className="container mx-auto px-6">
         <SectionHeader
           title="Services & Expertise"
-          subtitle="Delivering transformative solutions."
+      subtitle="Delivering transformative solutions."
           badge={<Briefcase className="text-primary-start" />}
         />
 
@@ -110,7 +110,7 @@ const Services = () => {
                   <div className={`inline-flex items-center justify-center p-2 rounded-xl mb-3 bg-surface/10 w-fit transition-colors ${service.iconColor} group-hover:text-current`}>
                     {React.cloneElement(service.icon, { size: 20 })}
                   </div>
-                  <h3 className="text-lg font-bold mb-1">{service.title}</h3>
+              <h3 className="text-lg font-bold mb-1">{service.title}</h3>
                   <p className="text-gray-400 text-sm mb-3">{service.desc}</p>
                 </div>
 
@@ -120,7 +120,7 @@ const Services = () => {
                       <span className={`w-1.5 h-1.5 rounded-full mr-2 ${service.iconColor.replace('text-', 'bg-')}`} />
                       {pt}
                     </li>
-                  ))}
+            ))}
                 </ul>
               </Card>
             </motion.div>

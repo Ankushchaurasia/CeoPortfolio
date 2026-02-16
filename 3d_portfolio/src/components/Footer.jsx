@@ -11,14 +11,14 @@ export default function Footer() {
             <span className="text-2xl font-bold text-gradient mb-6 block">Thakur Abhishek Singh</span>
             <p className="text-gray-400 max-w-sm leading-relaxed mb-8">
               Leading innovation and driving excellence in business transformation. Empowering organizations to achieve sustainable growth.
-            </p>
+         </p>
           </div>
           <div>
             <h4 className="text-lg font-bold mb-6">Quick Links</h4>
             <ul className="space-y-4">
               {['About','Vision','Services','Contact'].map(link => (
                 <li key={link}>
-                  <ScrollLink to={link.toLowerCase()} smooth={true} offset={-70} className="text-gray-400 hover:text-primary-start transition-colors cursor-pointer">{link}</ScrollLink>
+            <ScrollLink to={link.toLowerCase()} smooth={true} offset={-70} className="text-gray-400 hover:text-primary-start transition-colors cursor-pointer">{link}</ScrollLink>
                 </li>
               ))}
             </ul>

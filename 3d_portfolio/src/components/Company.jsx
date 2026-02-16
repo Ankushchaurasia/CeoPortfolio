@@ -42,10 +42,10 @@ const FlagItem = ({ country, code }) => (
 
 const GlobalImpact = () => {
   const stats = [
-    { id: 1, label: "Companies Founded", value: 7, icon: <Building2 />, suffix: "" },
-    { id: 2, label: "Global Ventures", value: 12, icon: <Globe />, suffix: "+" },
-    { id: 3, label: "Revenue Generated", value: 500, icon: <TrendingUp />, suffix: "M+" },
-    { id: 4, label: "Teams Led", value: 2500, icon: <Users />, suffix: "+" },
+    { id: 1, label: "Companies Founded", value: 2, icon: <Building2 />, suffix: "" },
+    { id: 2, label: "Global Ventures", value: 9, icon: <Globe />, suffix: "+" },
+    { id: 3, label: "Revenue Generated", value: 560, icon: <TrendingUp />, suffix: "M+" },
+    { id: 4, label: "Teams Led", value: 200, icon: <Users />, suffix: "+" },
   ];
 
   const countries = [

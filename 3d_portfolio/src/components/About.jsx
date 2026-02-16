@@ -48,13 +48,13 @@ const About = () => {
   const highlights = [
     { icon: <Briefcase />, title: "Business Leader", desc: "Strategic executive with proven track record." },
     { icon: <Lightbulb />, title: "Thought Leader", desc: "Speaker and educator in business innovation." },
-    { icon: <Globe />, title: "Global Impact", desc: "Operating across 25+ countries worldwide." },
+    { icon: <Globe />, title: "Global Impact", desc: "Operating across 8+ countries worldwide." },
     { icon: <Award />, title: "Award Winner", desc: "Recognized for excellence and innovation." },
   ];
 
   return (
-    <section id="about" className="py-10 relative">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-1 relative">
+      <div className="container mx-auto px-6 md:px-8">
         <SectionHeader title="About Me" subtitle="Driving transformational change through visionary leadership." badge={<Users className="text-primary-start" />} />
 
         <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -66,10 +66,14 @@ const About = () => {
             className="flex-1"
           >
             <motion.p variants={fadeInUp} className="text-lg text-gray-300 mb-6 leading-relaxed">
-              With over two decades of experience in executive leadership, I've dedicated my career to building transformative businesses that create lasting value. My journey has taken me across continents and industries, shaping my approach to sustainable growth.
+            Thakur Abhishek Singh is a visionary entrepreneur and technology leader with a strong foundation in Cyber Security, holding both B.Tech and M.Tech degrees in the discipline. As the Founder and CEO of CountryEdu Private Limited and Abhishek & Company, he has been instrumental in driving innovation across the fields of IT Managed Services, EdTech, and Global Business Consulting.
+
+With a deep understanding of software development and a passion for strategic growth hacking, Abhishek Singh has successfully led multiple ventures to remarkable milestones. His leadership emphasizes customer-centric innovation, helping clients achieve their business goals through tailored, technology-driven solutions.
             </motion.p>
             <motion.p variants={fadeInUp} className="text-lg text-gray-300 mb-8 leading-relaxed">
-              I believe in the power of innovation combined with purpose. I lead organizations through pivotal transformations, empowering people and driving meaningful change.
+             Under his direction, both companies have established cross-country collaborations in the UAE, Canada, Australia, Europe, Hong Kong, and Malaysia, enabling global partnerships and expanding opportunities for clients and stakeholders alike.
+
+With vast domain expertise and a commitment to excellence, Thakur Abhishek Singh continues to shape the future of technology and business consulting — empowering organizations to grow, innovate, and succeed in a competitive digital world.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
               {['Excellence', 'Integrity', 'Innovation', 'Sustainability'].map(tag => (

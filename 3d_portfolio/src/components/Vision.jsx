@@ -37,7 +37,8 @@ const Vision = () => {
     <section 
       id="vision" 
 
-className="min-h-90vh py-10 bg-surface/30 flex flex-col justify-center relative overflow-hidden"
+className="min-h-screen pt-0 pb-16 bg-surface/30 flex flex-col justify-center relative overflow-hidden"
+
     >
        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary-start/5 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -47,7 +48,7 @@ className="min-h-90vh py-10 bg-surface/30 flex flex-col justify-center relative 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }} // Trigger when 20% of the section is visible
+            viewport={{ once: true, amount: 0.2 }} 
             className="flex flex-col gap-8"
          >
    {/* main heading */}
@@ -55,7 +56,7 @@ className="min-h-90vh py-10 bg-surface/30 flex flex-col justify-center relative 
                 <div className="inline-flex justify-center mb-3 bg-surface p-3 rounded-2xl bg-gradient-to-br from-primary-start/20 to-primary-end/20 text-primary-start">
                     <Target size={24}/>
                 </div>
-                <h2 className="text-3xl md:text-5xl font-bold mb-2 text-gradient">Vision & Mission</h2>
+           <h2 className="text-3xl md:text-5xl font-bold mb-2 text-gradient">Vision & Mission</h2>
                 <p className="text-gray-400 max-w-2xl mx-auto">Building tomorrow's solutions with today's innovations.</p>
             </motion.div>
 {/* for vision and mission cards */}
@@ -87,9 +88,9 @@ className="min-h-90vh py-10 bg-surface/30 flex flex-col justify-center relative 
                  
                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                      {[
-                         { icon: <Lightbulb/>, title: "Innovation First", desc: "Embracing cutting-edge solutions." },
-                         { icon: <Users/>, title: "People Matter", desc: "Fostering inclusive cultures." },
-                         { icon: <Award/>, title: "Ethical Leadership", desc: "Leading with integrity always." }
+                         { icon: <Lightbulb/>, title: "Innovation First", desc: "Driving progress through technology and bold ideas." },
+                 { icon: <Users/>, title: "People Matter", desc: "Empowering talent, fostering inclusive excellence.." },
+                         { icon: <Award/>, title: "Ethical Leadership", desc: "Building trust through integrity and accountability." }
                      ].map((item, idx) => (
                          <Card key={idx} className="text-center items-center justify-center">
                               <div className="bg-gradient-to-br from-primary-start/20 to-primary-end/20 p-4 rounded-full inline-block mb-3 text-primary-end">
@@ -106,6 +107,6 @@ className="min-h-90vh py-10 bg-surface/30 flex flex-col justify-center relative 
        </div>
     </section>
   );
-};
+   };
 
-export default Vision;
+     export default Vision;
